@@ -8,6 +8,10 @@
 
 get has no dependencies.
 
+For testing, you'll need make and [expresso](https://github.com/visionmedia/expresso).
+
+For docs you'll need [docco](https://github.com/jashkenas/docco).
+
 ## Features
 
 * Redirect following.
