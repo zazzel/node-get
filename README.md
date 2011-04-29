@@ -1,12 +1,12 @@
-# node-get
+# get
 
-`node-get` is a slightly higher-level HTTP client for nodejs.
+`get` is a slightly higher-level HTTP client for nodejs.
 
 ## Installation
 
-    npm install node-get
+    npm install get
 
-node-get has no dependencies.
+get has no dependencies.
 
 ## Features
 
@@ -17,7 +17,7 @@ node-get has no dependencies.
 
 ## API
 
-Downloads are objects in `node-get`.
+Downloads are objects in `get`.
 
     var dl = new get({ uri: 'http://google.com/' });
 
@@ -61,17 +61,25 @@ it accepts
 
 ## Example
 
-    var get = require('node-get');
+    var get = require('get');
 
     var download = new get('http://google.com/');
     download.asString(console.log);
 
 ## Binary
 
-node-get includes a binary, `node-get-file.js`, which downloads 
+get includes a binary, `node-get-file.js`, which downloads 
 files either to the filesystem or to stdout.
 
 ## Changelog
+
+### 0.2.0
+
+* `node-get` is now `get`.
+
+### 0.1.1
+
+* [laplatrem](https://github.com/leplatrem): Fixed HTTPS support
 
 ### 0.1.0
 

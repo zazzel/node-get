@@ -8,7 +8,7 @@ var get = require('../lib/node-get');
 exports['test constructor'] = function(beforeExit) {
     [
         {
-            url: 'http://tilemill-data.s3amazonawscom/merc_box.geojson',
+            url: 'http://tilemill-data.s3.amazonaws.com/couchsurf.kml',
             bin: false,
             type: 'txt'
         } /*,
@@ -67,16 +67,20 @@ exports['test constructor'] = function(beforeExit) {
             if (u.error) {
                 assert.eql(err, u.error, 'This should have had an error');
             } else {
-                result.on('data', function(chunk) {
-                    body.push(chunk);
-                });
-                result.on('end', function() {
-                    assert.isDefined(body.length);
-                });
+                if (result) {
+                    result.on('data', function(chunk) {
+                        body.push(chunk);
+                    });
+                    result.on('end', function() {
+                        assert.isDefined(body.length);
+                    });
+                } else {
+                    console.log(err);
+                }
             }
         });
         var p = req.toDisk('test_data/file_' + i + '.' + u.type, function(err, result) {
-            // err && console.log(err);
+            err && console.log(err);
             if (u.error) {
                 assert.eql(err, u.error);
             }
