@@ -62,6 +62,7 @@ it accepts
 * `uri` - the address of the resource
 * `headers` - to replace its default headers with custom ones
 * `max_redirs` - the number of redirects to follow before returning an error
+* `no_proxy` - don't use a HTTP proxy, even if one is in `ENV`
 
 ## Example
 
@@ -76,6 +77,10 @@ get includes a binary, `node-get-file.js`, which downloads
 files either to the filesystem or to stdout.
 
 ## Changelog
+
+### 0.3.0
+
+* `get` now supports HTTP SOCKS proxies by setting `HTTP_PROXY` in `ENV`
 
 ### 0.2.0
 
