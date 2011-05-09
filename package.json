@@ -5,19 +5,19 @@
   "description"   : "A slightly higher-level HTTP client for node.",
   "keywords"      : ["http", "client"],
   "url"           : "http://github.com/tmcw/node-get",
-   "repositories" : [
-       {
-           "type" : "git",
-           "url"  : "git://github.com/tmcw/node-get.git"
-       }
-   ],
+  "repositories" : [
+      {
+          "type" : "git",
+          "url"  : "git://github.com/tmcw/node-get.git"
+      }
+  ],
   "author"        : "Tom MacWright <macwright@gmail.com>",
   "contributors"  : [],
   "licenses"      : ["BSD"],
   "dependencies"  : [],
   "bin"           : {
-       "node-get-file.js" : "./bin/node-get-file.js"
-   },
-   "directories"  : { },
+      "node-get-file.js" : "./bin/node-get-file.js"
+  },
+  "directories"  : { },
   "engines"       : { "node": ">= 0.2.4" }
 }
