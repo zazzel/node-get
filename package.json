@@ -16,7 +16,8 @@
   }],
   "devDependencies": {
     "expresso" : "= 0.7.x",
-    "docco" : "= 0.2.x"
+    "jshint" : "= 0.2.x",
+    "docco" : "= 0.3.x"
   },
   "bin"           : {
     "node-get-file.js" : "./bin/node-get-file.js"

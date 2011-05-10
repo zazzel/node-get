@@ -4,14 +4,17 @@
 
 ifndef only
 test:
-	expresso -I lib test/*.test.js
+	./node_modules/.bin/expresso -I lib test/*.test.js
 else
 test:
 	rm -rf test_data/files_*
-	expresso -I lib test/${only}.test.js
+	./node_modules/.bin/expresso -I lib test/${only}.test.js
 endif
 
+lint:
+	./node_modules/.bin/jshint lib/node-get/*.js
+
 doc:
-	docco lib/node-get/*.js bin/node-get-file.js
+	./node_modules/.bin/docco lib/node-get/*.js bin/node-get-file.js
 
 .PHONY: test
