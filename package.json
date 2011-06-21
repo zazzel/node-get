@@ -1,24 +1,24 @@
 {
-  "name"          : "get",
-  "description"   : "A slightly higher-level HTTP client for node.",
-  "version"       : "0.4.0",
-  "main"          : "./lib/node-get/index.js",
-  "keywords"      : ["http", "client", "request", "get"],
-  "url"           : "http://github.com/tmcw/node-get",
-  "repositories" : [{
-    "type" : "git",
-    "url"  : "git://github.com/tmcw/node-get.git"
-  }],
-  "author"        : "Tom MacWright <macwright@gmail.com>",
-  "contributors"  : [
+    "name": "get",
+    "description": "A slightly higher-level HTTP client for node.",
+    "version": "0.4.0",
+    "main": "./lib/node-get/index.js",
+    "keywords": ["http", "client", "request", "get"],
+    "url": "http://github.com/tmcw/node-get",
+    "repositories": [{
+        "type": "git",
+        "url": "git://github.com/tmcw/node-get.git"
+    }],
+    "author": "Tom MacWright <macwright@gmail.com>",
+    "contributors": [
     "Konstantin Käfer <kkaefer@gmail.com>"
-  ],
-  "licenses"      : [{
-    "type":"BSD"
-  }],
-  "devDependencies": {
-    "expresso" : "= 0.7.x",
-    "jshint" : "= 0.2.x",
-    "docco" : "= 0.3.x"
-  }
+    ],
+    "licenses": [{
+        "type": "BSD"
+    }],
+    "devDependencies": {
+        "expresso": "= 0.7.x",
+        "jshint": "= 0.2.x",
+        "docco": "= 0.3.x"
+    }
 }
