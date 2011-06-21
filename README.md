@@ -23,38 +23,58 @@ For docs you'll need [docco](https://github.com/jashkenas/docco).
 
 Downloads are objects in `get`.
 
-    var dl = new get({ uri: 'http://google.com/' });
+```javascript
+var dl = new get({ uri: 'http://google.com/' });
+```
 
 The get constructor can also take a plain string if you don't want to give options.
 
-    var dl = new get('http://google.com/');
+```javascript
+var dl = new get('http://google.com/');
+```
 
 It can also take other options.
 
-    var dl = new get({
-        uri: 'http://google.com/',
-        max_redirs: 20,
-    });
+```javascript
+var dl = new get({
+    uri: 'http://google.com/',
+    max_redirs: 20,
+});
+```
 
-Then it exposes two big methods
+Then it exposes three main methods
 
-    dl.asString(function(err, str) {
-        console.log(str);
-    });
+```javascript
+dl.asString(function(err, str) {
+    console.log(str);
+});
+```
 
 and
 
-    dl.toDisk('myfile.txt', function(err) {
-        console.log(err);
-    });
+```javascript
+dl.toDisk('myfile.txt', function(err, filename) {
+    console.log(err);
+});
+```
+
+and finally
+
+```javascript
+dl.asBuffer(function(err, data) {
+    console.log(data);
+});
+```
+
 
 There's also a lower-level API.
 
-    dl.perform(function(err, response, encoding) {
-        // response is just a response object, just like
-        // HTTP request, except handling redirects
-    });
-
+```javascript
+dl.perform(function(err, response) {
+    // response is just a response object, just like
+    // HTTP request, except handling redirects
+});
+```
 
 If you give node-get an object of settings instead of a string,
 it accepts
@@ -63,20 +83,26 @@ it accepts
 * `headers` - to replace its default headers with custom ones
 * `max_redirs` - the number of redirects to follow before returning an error
 * `no_proxy` - don't use a HTTP proxy, even if one is in `ENV`
+* `encoding` - When calling `.guessEncoding()`, `get` will use this instead of the default value
 
 ## Example
 
-    var get = require('get');
+```
+var get = require('get');
 
-    var download = new get('http://google.com/');
-    download.asString(console.log);
-
-## Binary
-
-get includes a binary, `node-get-file.js`, which downloads 
-files either to the filesystem or to stdout.
+new get('http://google.com/').asString(function(err, data) {
+    if (err) throw err;
+    console.log(data);
+});
+```
 
 ## Changelog
+
+### 0.4.0
+
+* Added `asBuffer()` method
+* Streamlined `asDisk` to use node's native `.pipe()` function
+* Added `encoding` option to constructor
 
 ### 0.3.0
 

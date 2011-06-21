@@ -1,7 +1,7 @@
 {
   "name"          : "get",
   "description"   : "A slightly higher-level HTTP client for node.",
-  "version"       : "0.3.0",
+  "version"       : "0.4.0",
   "main"          : "./lib/node-get/index.js",
   "keywords"      : ["http", "client", "request", "get"],
   "url"           : "http://github.com/tmcw/node-get",
@@ -10,7 +10,9 @@
     "url"  : "git://github.com/tmcw/node-get.git"
   }],
   "author"        : "Tom MacWright <macwright@gmail.com>",
-  "contributors"  : [],
+  "contributors"  : [
+    "Konstantin Käfer <kkaefer@gmail.com>"
+  ],
   "licenses"      : [{
     "type":"BSD"
   }],
@@ -18,10 +20,5 @@
     "expresso" : "= 0.7.x",
     "jshint" : "= 0.2.x",
     "docco" : "= 0.3.x"
-  },
-  "bin"           : {
-    "node-get-file.js" : "./bin/node-get-file.js"
-  },
-  "directories"  : { },
-  "engines"      : { "node": ">= 0.2.4" }
+  }
 }
