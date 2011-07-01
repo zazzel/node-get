@@ -11,7 +11,7 @@
     }],
     "author": "Tom MacWright <macwright@gmail.com>",
     "contributors": [
-    "Konstantin Käfer <kkaefer@gmail.com>"
+        "Konstantin Käfer <kkaefer@gmail.com>"
     ],
     "licenses": [{
         "type": "BSD"

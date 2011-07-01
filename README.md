@@ -104,6 +104,11 @@ new get('http://google.com/').asString(function(err, data) {
 * Streamlined `asDisk` to use node's native `.pipe()` function
 * Added `encoding` option to constructor
 
+### 0.4.0
+
+* `.asBuffer()` added
+* `get()` can now be used without `new`
+
 ### 0.3.0
 
 * `get` now supports HTTP SOCKS proxies by setting `HTTP_PROXY` in `ENV`
@@ -141,3 +146,4 @@ new get('http://google.com/').asString(function(err, data) {
 ## Authors
 
 * Tom MacWright (tmcw)
+* Konstantin Kaefer (kkaefer)
