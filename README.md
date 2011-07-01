@@ -78,6 +78,11 @@ files either to the filesystem or to stdout.
 
 ## Changelog
 
+### 0.4.0
+
+* `.asBuffer()` added
+* `get()` can now be used without `new`
+
 ### 0.3.0
 
 * `get` now supports HTTP SOCKS proxies by setting `HTTP_PROXY` in `ENV`
@@ -115,3 +120,4 @@ files either to the filesystem or to stdout.
 ## Authors
 
 * Tom MacWright (tmcw)
+* Konstantin Kaefer (kkaefer)
