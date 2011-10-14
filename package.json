@@ -1,7 +1,7 @@
 {
     "name": "get",
     "description": "A slightly higher-level HTTP client for node.",
-    "version": "0.4.2",
+    "version": "0.5.2",
     "main": "./lib/node-get/index.js",
     "keywords": ["http", "client", "request", "get"],
     "url": "http://github.com/tmcw/node-get",
@@ -20,5 +20,8 @@
         "expresso": "= 0.7.x",
         "jshint": "= 0.2.x",
         "docco": "= 0.3.x"
+    },
+    "engines": {
+        "node": "0.4.x"
     }
 }

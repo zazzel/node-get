@@ -3,13 +3,13 @@
 var path = require('path'),
     url = require('url'),
     sys = require('sys'),
-    get = require('node-get');
+    get = require('../lib/node-get/index.js');
 
-var usage = 'usage:\n'
-    + '\ndownload to a file:'
-    + '\n\tnode-get-file.js <file> <destination_file>'
-    + '\n\nget contents of file:'
-    + '\n\tnode-get-file.js <file> -'
+var usage = 'usage:\n' +
+    '\ndownload to a file:' +
+    '\n\tnode-get-file.js <file> <destination_file>' +
+    '\n\nget contents of file:' +
+    '\n\tnode-get-file.js <file> -'
 
 // Guessing destination filenames wget-style has never been
 // very robust, so require users to specify them.
@@ -30,29 +30,26 @@ try {
     process.exit(1);
 }
 
-switch (dest) {
-    case '-':
-        // Download to disk.
-        download.asString(function(err, str) {
-            // Print both errors and debugging messages
-            // to stderr so that eventual piping is succesfull
-            if (err) {
-                sys.debug(err);
-            } else {
-                console.log(str);
-            }
-        });
-        break;
-    default:
-        // Download to disk.
-        download.toDisk(dest, function(err, filename) {
-            // Print both errors and debugging messages
-            // to stderr so that eventual piping is succesfull
-            if (err) {
-                sys.debug(err);
-            } else {
-                sys.debug('Downloaded to ' + filename);
-            }
-        });
-        break;
+if (dest == '-') {
+    // Download to disk.
+    download.asString(function(err, str) {
+        // Print both errors and debugging messages
+        // to stderr so that eventual piping is succesfull
+        if (err) {
+            sys.debug(err);
+        } else {
+            console.log(str);
+        }
+    });
+} else {
+    // Download to disk.
+    download.toDisk(dest, function(err, filename) {
+        // Print both errors and debugging messages
+        // to stderr so that eventual piping is succesfull
+        if (err) {
+            sys.debug(err);
+        } else {
+            sys.debug('Downloaded to ' + filename);
+        }
+    });
 }
