@@ -1,5 +1,10 @@
 ## Changelog
 
+### 1.1.0
+
+* Returns Get instance as last parameter of `toDisk`, which
+  assists with filetype-guessing
+
 ### 1.0.0
 
 * Switched from deprecated `createClient()` API to new

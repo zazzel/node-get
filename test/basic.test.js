@@ -28,8 +28,7 @@ exports['test constructor'] = function(beforeExit) {
 
     var files = [
         {
-            url: 'https://docs.google.com/a/dbsgeo.com/spreadsheet/pub?hl=' +
-                'en_US&hl=en_US&key=0AqV4OJpywingdFNYLXpKMmxqMG1lWTJzNE45ZUVnNlE&single=true&gid=0&output=csv',
+            url: 'https://docs.google.com/a/dbsgeo.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AqV4OJpywingdFNYLXpKMmxqMG1lWTJzNE45ZUVnNlE&single=true&gid=0&output=csv',
             bin: false,
             redirects: 1,
             md5: 'a4d019d2bfedc55e84447f833ed71dff'
