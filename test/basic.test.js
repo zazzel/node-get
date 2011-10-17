@@ -2,6 +2,7 @@ var path = require('path'),
     sys = require('sys'),
     assert = require('assert'),
     crypto = require('crypto'),
+    _ = require('underscore'),
     exec = require('child_process').exec,
     fs = require('fs');
 
@@ -30,6 +31,7 @@ exports['test constructor'] = function(beforeExit) {
             url: 'https://docs.google.com/a/dbsgeo.com/spreadsheet/pub?hl=' +
                 'en_US&hl=en_US&key=0AqV4OJpywingdFNYLXpKMmxqMG1lWTJzNE45ZUVnNlE&single=true&gid=0&output=csv',
             bin: false,
+            redirects: 1,
             md5: 'a4d019d2bfedc55e84447f833ed71dff'
         },
         {
@@ -91,6 +93,10 @@ exports['test constructor'] = function(beforeExit) {
                     completed.perform++;
                     assert.ok(body.length);
                 });
+                result.on('close', function() {
+                    completed.perform++;
+                    assert.ok(body.length);
+                });
             }
         });
 
@@ -134,7 +140,8 @@ exports['test constructor'] = function(beforeExit) {
 
     beforeExit(function() {
         assert.deepEqual(completed, {
-            perform: files.length,
+            perform: files.length /* + _.reduce(_.pluck(files, 'redirects'),
+                function(memo, num) { return memo + (num || 0); }, 0) */,
             toDisk: files.length,
             asString: files.length,
             asBuffer: files.length
