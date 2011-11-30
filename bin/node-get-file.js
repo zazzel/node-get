@@ -2,7 +2,7 @@
 
 var path = require('path'),
     url = require('url'),
-    sys = require('sys'),
+    util = require('util'),
     get = require('../lib/node-get/index.js');
 
 var usage = 'usage:\n' +
@@ -13,8 +13,8 @@ var usage = 'usage:\n' +
 
 // Guessing destination filenames wget-style has never been
 // very robust, so require users to specify them.
-var obj = process.ARGV[2];
-var dest = process.ARGV[3];
+var obj = process.argv[2];
+var dest = process.argv[3];
 if (!(obj && dest)) {
    console.log(usage);
    process.exit(1);
@@ -26,7 +26,7 @@ try {
         uri: obj
     });
 } catch(e) {
-    sys.debug(e);
+    util.debug(e);
     process.exit(1);
 }
 
@@ -36,7 +36,7 @@ if (dest == '-') {
         // Print both errors and debugging messages
         // to stderr so that eventual piping is succesfull
         if (err) {
-            sys.debug(err);
+            util.debug(err);
         } else {
             console.log(str);
         }
@@ -47,9 +47,9 @@ if (dest == '-') {
         // Print both errors and debugging messages
         // to stderr so that eventual piping is succesfull
         if (err) {
-            sys.debug(err);
+            util.debug(err);
         } else {
-            sys.debug('Downloaded to ' + filename);
+            util.debug('Downloaded to ' + filename);
         }
     });
 }
