@@ -1,5 +1,5 @@
 var path = require('path'),
-    sys = require('sys'),
+    util = require('util'),
     assert = require('assert'),
     crypto = require('crypto'),
     _ = require('underscore'),
@@ -62,11 +62,6 @@ exports['test constructor'] = function(beforeExit) {
             url: 'http://dcatlas.dcgis.dc.gov/catalog/download.asp?downloadID=2315&downloadTYPE=ESRI',
             bin: true,
             md5: 'ac629823b373e7308087264d9f00ef5c'
-        },
-        {
-            url: 'http://www.gdal.org/ogr/drv_sqlite.html',
-            bin: false,
-            md5: '6c7b88f22cf3a1c9dc0ef265004d449d'
         }
     ];
 
