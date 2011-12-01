@@ -17,6 +17,18 @@ var get = require('../lib/node-get');
 exec('rm -rf ./test_data && mkdir ./test_data', function(err, stdout, stderr) {
 if (err) throw err;
 
+exports['test invalid url'] = function() {
+    var req = {
+        uri: 'http://\\/',
+        headers: {
+            'User-Agent': 'tombot'
+        }
+    };
+    new get(req).toDisk('test_data/file_tmp', function(err, result) {
+        assert.equal(err.message, 'Invalid URL');
+    });
+};
+
 exports['test constructor'] = function(beforeExit) {
     // Verify callback completion.
     var completed = {
