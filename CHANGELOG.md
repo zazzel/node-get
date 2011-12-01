@@ -1,5 +1,13 @@
 ## Changelog
 
+### 1.1.2
+
+* Better error handling around invalid URLs
+
+### 1.1.1
+
+* Node 0.6.3 compatibility without warnings
+
 ### 1.1.0
 
 * Returns Get instance as last parameter of `toDisk`, which
