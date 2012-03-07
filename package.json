@@ -26,6 +26,6 @@
         "node": ">= 0.3.6"
     },
     "scripts": {
-        "test": "which expresso | sh"
+        "test": "mocha -R spec"
     }
 }
