@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.1.3
+
+* Now using 10 second timeout - tests using mocha
+
 ### 1.1.2
 
 * Better error handling around invalid URLs
