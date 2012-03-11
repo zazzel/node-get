@@ -79,6 +79,10 @@ describe('get().perform', function() {
                     result.on('data', function(chunk) {
                         body.push(chunk);
                     });
+                    result.on('close', function(err) {
+                        assert.equal(md5(body), reference.md5);
+                        done();
+                    });
                     result.on('end', function() {
                         assert.equal(md5(body), reference.md5);
                         done();
