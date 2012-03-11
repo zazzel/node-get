@@ -22,17 +22,21 @@ describe('error handling', function() {
         });
     });
 
-    it('should report a timeout error', function(done) {
-        new get({
-            uri: 'http://localhost:' + port,
-            headers: { 'User-Agent': 'tombot' },
-            timeout: 500
-        }).asString(function(err, result) {
-            assert.ok(err);
-            assert.equal(err.message, 'Timed out after 500ms');
-            done();
+    // Request timeout feature only exists on node v0.6.x.
+    // Test that this can pass before running the test.
+    if (http.ClientRequest.prototype.setTimeout) {
+        it('should report a timeout error', function(done) {
+            new get({
+                uri: 'http://localhost:' + port,
+                headers: { 'User-Agent': 'tombot' },
+                timeout: 500
+            }).asString(function(err, result) {
+                assert.ok(err);
+                assert.equal(err.message, 'Timed out after 500ms');
+                done();
+            });
         });
-    });
+    }
 });
 
 after(function() {
