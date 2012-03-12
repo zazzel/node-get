@@ -1,4 +1,4 @@
-# get
+# get ![CI status](https://secure.travis-ci.org/developmentseed/node-get.png?branch=master)
 
 `get` is a slightly higher-level HTTP client for nodejs.
 
