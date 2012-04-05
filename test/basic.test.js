@@ -164,3 +164,31 @@ describe('get().asBuffer', function() {
         });
     });
 });
+
+describe('max_length', function() {
+    it('should abort .asBuffer() if the max_length is exceeded', function(done) {
+        this.timeout(0);
+        new get({
+            uri: 'http://tilemill-data.s3.amazonaws.com/images/paperfolds_256.png',
+            headers: { 'User-Agent': 'tombot' },
+            max_length: 10000
+        }).asBuffer(function(err) {
+            assert.ok(err);
+            assert.equal(err.message, 'File exceeds maximum allowed length of 10000 bytes');
+            done();
+        });
+    });
+
+    it('should abort .asString() if the max_length is exceeded', function(done) {
+        this.timeout(0);
+        new get({
+            uri: 'http://tilemill-data.s3.amazonaws.com/test_data/README.txt',
+            headers: { 'User-Agent': 'tombot' },
+            max_length: 10
+        }).asString(function(err) {
+            assert.ok(err);
+            assert.equal(err.message, 'File exceeds maximum allowed length of 10 bytes');
+            done();
+        });
+    });
+});
