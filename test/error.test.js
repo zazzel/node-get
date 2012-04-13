@@ -32,6 +32,7 @@ describe('error handling', function() {
                 timeout: 500
             }).asString(function(err, result) {
                 assert.ok(err);
+                assert.equal(err.status, 504);
                 assert.equal(err.message, 'Timed out after 500ms');
                 done();
             });
