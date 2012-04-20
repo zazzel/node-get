@@ -27,16 +27,22 @@ Downloads are objects in `get`.
 var dl = new get({ uri: 'http://google.com/' });
 ```
 
+However, the function is [a self-calling constructor](http://ejohn.org/blog/simple-class-instantiation/), and thus the `new` keyword is not necessary:
+
+```javascript
+var dl = get({ uri: 'http://google.com/' });
+```
+
 The get constructor can also take a plain string if you don't want to give options.
 
 ```javascript
-var dl = new get('http://google.com/');
+var dl = get('http://google.com/');
 ```
 
 It can also take other options.
 
 ```javascript
-var dl = new get({
+var dl = get({
     uri: 'http://google.com/',
     max_redirs: 20,
 });
@@ -90,7 +96,7 @@ it accepts
 ```
 var get = require('get');
 
-new get('http://google.com/').asString(function(err, data) {
+get('http://google.com/').asString(function(err, data) {
     if (err) throw err;
     console.log(data);
 });
