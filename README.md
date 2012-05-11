@@ -8,7 +8,7 @@
 
 get has no dependencies.
 
-For testing, you'll need make and [expresso](https://github.com/visionmedia/expresso).
+For testing, you'll need make and [mocha](https://github.com/visionmedia/mocha).
 
 For docs you'll need [docco](https://github.com/jashkenas/docco).
 
