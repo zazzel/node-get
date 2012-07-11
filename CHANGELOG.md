@@ -1,5 +1,21 @@
 ## Changelog
 
+### 1.1.7
+
+* Automatic base64 encoding of proxy.auth into headers['proxy-authorization']
+* Now properly sets headers on requests
+* Moved tests to mocha
+
+### 1.1.6
+
+* Now returns 504 errors
+* Only uses setTimeout if timeout value is > 0
+
+### 1.1.5
+
+* Added max_length setting (assumes bytes) that cancels
+  the download if the file is growing too big
+
 ### 1.1.4
 
 * Retain node v0.4.x compatibility.
