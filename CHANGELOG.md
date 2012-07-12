@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.1.8
+
+* Fix proxy support when not using auth
+
 ### 1.1.7
 
 * Automatic base64 encoding of proxy.auth into headers['proxy-authorization']
