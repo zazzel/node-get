@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.1.9
+
+* More fixes to proxy support
+
 ### 1.1.8
 
 * Fix proxy support when not using auth
