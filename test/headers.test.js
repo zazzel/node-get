@@ -43,6 +43,20 @@ describe('headers', function() {
             done();
         });
     });
+
+
+    it('should set correct headers for proxied requests', function(done) {
+    var HTTP_PROXY = process.env.HTTP_PROXY;
+        process.env.HTTP_PROXY = 'http://user:pass@example.com:88';
+        var headers = new get({
+            uri: 'http://localhost:' + port
+        }).headers;
+        assert.equal(headers.Host, 'localhost:' + port);
+        assert.equal(headers['proxy-authorization'], 'Basic dXNlcjpwYXNz');
+        process.env.HTTP_PROXY = HTTP_PROXY;
+        done();
+    });
+
 });
 
 after(function() {
