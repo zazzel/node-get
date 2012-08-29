@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.1.10
+
+* Re-tagging due to a problem with 1.1.9 being previously tagged
+
 ### 1.1.9
 
 * More fixes to proxy support
