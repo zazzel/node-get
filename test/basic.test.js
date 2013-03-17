@@ -48,7 +48,7 @@ var files = [
     {
         url: 'http://dcatlas.dcgis.dc.gov/catalog/download.asp?downloadID=2315&downloadTYPE=ESRI',
         bin: true,
-        md5: 'ac629823b373e7308087264d9f00ef5c'
+        md5: 'bb9ab6b15dab9615717f2fc76bd73c1b'
     }
 ];
 
