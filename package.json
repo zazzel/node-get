@@ -5,10 +5,10 @@
     "main": "./lib/node-get/index.js",
     "keywords": ["http", "client", "request", "get"],
     "url": "http://github.com/developmentseed/node-get",
-    "repositories": [{
+    "repository": {
         "type": "git",
         "url": "git://github.com/developmentseed/node-get.git"
-    }],
+    },
     "author": "Tom MacWright <macwright@gmail.com>",
     "contributors": [
         "Konstantin Käfer <kkaefer@gmail.com>"
