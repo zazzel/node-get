@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.3.0
+
+* node v0.10 compatibility
+
 ### 1.2.0
 
 * Make HTTP agent configurable.
