@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.4.0
+
+* Enforce content-length header if set in response
+
 ### 1.3.0
 
 * node v0.10 compatibility
