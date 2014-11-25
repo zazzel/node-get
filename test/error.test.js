@@ -17,7 +17,7 @@ describe('error handling', function() {
             uri: 'http://\\/',
             headers: { 'User-Agent': 'tombot' }
         }).toDisk('test_data/file_tmp', function(err, result) {
-            assert.equal(err.message, 'Invalid URL: http:///\\/');
+            assert.ok(/Invalid URL: http/.test(err.message));
             done();
         });
     });
