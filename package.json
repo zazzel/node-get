@@ -2,12 +2,12 @@
     "name": "get",
     "description": "A slightly higher-level HTTP client for node.",
     "version": "1.3.0",
-    "main": "./lib/node-get/index.js",
+    "main": "./lib/index.js",
     "keywords": ["http", "client", "request", "get"],
-    "url": "http://github.com/developmentseed/node-get",
+    "url": "https://github.com/mapbox/node-get",
     "repository": {
         "type": "git",
-        "url": "git://github.com/developmentseed/node-get.git"
+        "url": "git://github.com/mapbox/node-get.git"
     },
     "author": "Tom MacWright <macwright@gmail.com>",
     "contributors": [
