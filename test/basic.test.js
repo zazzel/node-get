@@ -21,7 +21,7 @@ var files = [
         md5: 'a4d019d2bfedc55e84447f833ed71dff'
     },
     {
-        url: 'http://tilemill-data.s3.amazonaws.com/images/paperfolds_256.png',
+        url: 'https://tilemill-data.s3.amazonaws.com/images/paperfolds_256.png',
         bin: true,
         md5: 'a99502016d4e2124cf2dc4775aafc256'
     },
