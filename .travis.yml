@@ -1,4 +1,23 @@
 language: node_js
+
 node_js:
-  - "0.8"
   - "0.10"
+
+before_install:
+# install squid as proxy server
+- sudo apt-get install -y squid3 net-tools ufw
+
+install:
+- npm install
+
+before_script:
+# create firewall to block traffic except through https://127.0.0.1:3128 (squid)
+- echo y | sudo ufw enable
+- sudo ufw deny out https
+- sudo ufw deny out http
+- sudo iptables -I OUTPUT -p tcp --dport 443 -m owner --uid-owner `id -u proxy` -j ACCEPT
+
+script:
+- npm test | true # this should fail
+- export HTTP_PROXY=https://127.0.0.1:3128
+- npm test
