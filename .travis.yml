@@ -1,6 +1,7 @@
 language: node_js
 
 node_js:
+  - "0.10.32"
   - "0.10.33"
 
 before_install:
@@ -24,7 +25,7 @@ before_script:
 script:
 - export HTTP_PROXY=http://127.0.0.1:3128
 - export HTTPS_PROXY=https://127.0.0.1:3128
-- node --enable-ssl3 ./node_modules/.bin/_mocha ./test/*js
+- node --enable-ssl2 ./node_modules/.bin/_mocha ./test/*js
 # ensure invalid proxy configuration fails
 #- export HTTP_PROXY=http://invalid:3128
 #- export HTTPS_PROXY=https://invalid:3128
