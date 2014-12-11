@@ -4,7 +4,8 @@ var crypto = require('crypto');
 var exec = require('child_process').exec;
 var fs = require('fs');
 var get = require('..');
-
+var rm = require('rimraf');
+var mkdirp = require('mkdirp')
 
 function md5(obj) {
     if (!Array.isArray(obj)) obj = [ obj ];
@@ -53,10 +54,14 @@ var files = [
 ];
 
 
+var test_data = path.join(__dirname,'..','test_data');
 
 // Ensure that we start over with a clean test_data directory.
 before(function(done) {
-    exec('rm -rf ./test_data && mkdir ./test_data', done);
+    rm(test_data,function(err) {
+        if (err) throw err;
+        mkdirp(test_data,done);
+    });
 });
 
 describe('get().perform', function() {
@@ -100,7 +105,7 @@ describe('get().toDisk', function() {
             new get({
                 uri: reference.url,
                 headers: { 'User-Agent': 'tombot' }
-            }).toDisk('test_data/file_' + reference.md5, function(err, result) {
+            }).toDisk(path.join(test_data,'file_' + reference.md5), function(err, result) {
                 if (reference.error) {
                     assert.ok(err);
                     assert.equal(err.message, reference.error);

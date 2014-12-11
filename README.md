@@ -1,6 +1,9 @@
-# get [![Build Status](https://secure.travis-ci.org/mapbox/node-get.png?branch=master)](http://travis-ci.org/mapbox/node-get)
+# get
 
 `get` is a slightly higher-level HTTP client for nodejs.
+
+[![Build Status](https://secure.travis-ci.org/mapbox/node-get.png?branch=master)](http://travis-ci.org/mapbox/node-get)
+[![Build status](https://ci.appveyor.com/api/projects/status/fxy6741hx5jwfmk6?svg=true)](https://ci.appveyor.com/project/Mapbox/node-get)
 
 ## Installation
 
