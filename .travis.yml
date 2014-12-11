@@ -24,8 +24,8 @@ before_script:
 
 script:
 - export HTTP_PROXY=http://127.0.0.1:3128
-- export HTTPS_PROXY=https://127.0.0.1:3128
-- node --enable-ssl2 ./node_modules/.bin/_mocha ./test/*js
+#- export HTTPS_PROXY=https://127.0.0.1:3128
+- node ./node_modules/.bin/_mocha ./test/*js
 # ensure invalid proxy configuration fails
 #- export HTTP_PROXY=http://invalid:3128
 #- export HTTPS_PROXY=https://invalid:3128
