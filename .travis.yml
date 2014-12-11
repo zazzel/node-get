@@ -11,6 +11,8 @@ install:
 - npm install
 
 before_script:
+# test once before trying proxies
+- npm test
 # create firewall to block traffic except through https://127.0.0.1:3128 (squid)
 - echo y | sudo ufw enable
 - sudo ufw deny out https
