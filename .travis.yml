@@ -18,10 +18,12 @@ before_script:
 - sudo ufw deny out https
 - sudo ufw deny out http
 - sudo iptables -I OUTPUT -p tcp --dport 443 -m owner --uid-owner `id -u proxy` -j ACCEPT
+- sudo iptables -I OUTPUT -p tcp --dport 80  -m owner --uid-owner `id -u proxy` -j ACCEPT
+# ensure that curl outgoing works through squid before trying node-get
+- curl -I "http://tilemill-data.s3.amazonaws.com/images/paperfolds_256.png" --proxy https://127.0.0.1:3128
+- curl -I "https://tilemill-data.s3.amazonaws.com/images/paperfolds_256.png" --proxy https://127.0.0.1:3128
 
 script:
-- export HTTP_PROXY=https://127.0.0.1:3128
-- npm test
-- unset HTTP_PROXY
+- export HTTP_PROXY=http://127.0.0.1:3128
 - export HTTPS_PROXY=https://127.0.0.1:3128
 - npm test
