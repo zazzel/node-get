@@ -46,7 +46,7 @@ describe('error handling', function() {
                 uri: 'http://localhost:' + portBadLength,
                 headers: { 'User-Agent': 'tombot' }
             })[method](function(err, result) {
-                assert.equal(err.toString(), 'Error: Body (10 bytes) does not match content-length (20 bytes)');
+                assert.ok(err.toString().indexOf('does not match content-length (20 bytes)') > -1);
                 done();
             });
         });
