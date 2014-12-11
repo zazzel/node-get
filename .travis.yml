@@ -18,6 +18,8 @@ before_script:
 - sudo iptables -I OUTPUT -p tcp --dport 443 -m owner --uid-owner `id -u proxy` -j ACCEPT
 
 script:
-- npm test | true # this should fail
 - export HTTP_PROXY=https://127.0.0.1:3128
+- npm test
+- unset HTTP_PROXY
+- export HTTPS_PROXY=https://127.0.0.1:3128
 - npm test
